@@ -1,5 +1,8 @@
+using MusicPlaylistAPI.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
