@@ -10,19 +10,19 @@ public class UserRepository : IUserRepository
     public UserRepository() =>
         _collection = MongoDBClient.Instance.GetCollection<User>("Users");
 
-    public async Task Create(User user) =>
+    public async Task CreateAsync(User user) =>
         await _collection.InsertOneAsync(user);
 
-    public async Task<List<User>> GetAll() =>
+    public async Task<List<User>> GetAllAsync() =>
         await (await _collection.FindAsync(_ => true)).ToListAsync();
 
-    public async Task<User?> GetById(string id) =>
+    public async Task<User?> GetByIdAsync(string id) =>
         await (await _collection.FindAsync(u => u.Id == id)).FirstOrDefaultAsync();
 
-    public async Task Update(string id, User user) =>
+    public async Task UpdateAsync(string id, User user) =>
         await _collection.ReplaceOneAsync(u => u.Id == id, user);
 
-    public async Task Delete(string id) =>
+    public async Task DeleteAsync(string id) =>
         await _collection.DeleteOneAsync(u => u.Id == id);
 
 }

@@ -4,9 +4,9 @@ namespace MusicPlaylistAPI.Repositories;
 
 public interface IUserRepository
 {
-    Task Create(User user);
-    Task<List<User>> GetAll();
-    Task<User?> GetById(string id);
-    Task Update(string id, User user);
-    Task Delete(string id);
+    Task CreateAsync(User user);
+    Task<List<User>> GetAllAsync();
+    Task<User?> GetByIdAsync(string id);
+    Task UpdateAsync(string id, User user);
+    Task DeleteAsync(string id);
 }
