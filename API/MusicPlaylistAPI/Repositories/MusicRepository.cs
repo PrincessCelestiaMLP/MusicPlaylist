@@ -1,8 +1,7 @@
 ﻿using MongoDB.Driver;
 using MusicPlaylistAPI.Models.Entity;
-using MusicPlaylistAPI.Repositories;
 
-namespace MusicPlaylistAPI;
+namespace MusicPlaylistAPI.Repositories;
 
 public class MusicRepository : IMusicRepository
 {
