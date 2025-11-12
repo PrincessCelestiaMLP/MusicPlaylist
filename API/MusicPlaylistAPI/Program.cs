@@ -1,7 +1,9 @@
+using MusicPlaylistAPI.Mappers;
 using MusicPlaylistAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddAutoMapper(typeof(UserProfile));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPlaylistRepository, PlaylistRepository>();
 builder.Services.AddScoped<IMusicRepository, MusicRepository>();
