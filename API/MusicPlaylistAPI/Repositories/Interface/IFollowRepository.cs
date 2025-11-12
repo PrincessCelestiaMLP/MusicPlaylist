@@ -1,6 +1,6 @@
 ﻿using MusicPlaylistAPI.Models.Entity;
 
-namespace MusicPlaylistAPI.Repositories;
+namespace MusicPlaylistAPI.Repositories.Interface;
 
 public interface IFollowRepository
 {

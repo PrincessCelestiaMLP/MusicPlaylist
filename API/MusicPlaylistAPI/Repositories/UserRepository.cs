@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using MusicPlaylistAPI.Models.Entity;
+using MusicPlaylistAPI.Repositories.Interface;
 
 namespace MusicPlaylistAPI.Repositories;
 
