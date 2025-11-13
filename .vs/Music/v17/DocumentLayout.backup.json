@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|c:\\users\\zahar\\desktop\\\u0444\u043B\u0435\u0448\u043A\u0430\\\u043E\u043A\u0440\\laba_2\\musicplaylist\\music\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|c:\\users\\zahar\\desktop\\\u0444\u043B\u0435\u0448\u043A\u0430\\\u043E\u043A\u0440\\laba_2\\musicplaylist\\music\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\Form1.cs",
+              "RelativeDocumentMoniker": "Music\\Form1.cs",
+              "ToolTip": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\Form1.cs [Design]",
+              "RelativeToolTip": "Music\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:44:00.004Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\Form1.cs",
+              "RelativeDocumentMoniker": "Music\\Form1.cs",
+              "ToolTip": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\Form1.cs",
+              "RelativeToolTip": "Music\\Form1.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAgwFQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:44:04.775Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
