@@ -20,6 +20,9 @@ public class PlaylistRepository : IPlaylistRepository
     public async Task<Playlist?> GetByIdAsync(string id) =>
         await (await _collection.FindAsync(p => p.Id == id)).FirstOrDefaultAsync();
 
+    public async Task<List<Playlist>> GetByUserIdAsync(string id) =>
+        await (await _collection.FindAsync(p => p.UserId == id)).ToListAsync();
+
     public async Task UpdateAsync(string id, Playlist playlist) =>
         await _collection.ReplaceOneAsync(p => p.Id == id, playlist);
 

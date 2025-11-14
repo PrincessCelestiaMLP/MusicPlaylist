@@ -20,6 +20,9 @@ public class MusicRepository : IMusicRepository
     public async Task<Music?> GetByIdAsync(string id) =>
         await (await _collection.FindAsync(m => m.Id == id)).FirstOrDefaultAsync();
 
+    public async Task<List<Music>> GetByPlaylistIdAsync(string id) =>
+        await (await _collection.FindAsync(m => m.PlaylistId == id)).ToListAsync();
+
     public async Task UpdateAsync(string id, Music music) =>
         await _collection.ReplaceOneAsync(m => m.Id == id, music);
 

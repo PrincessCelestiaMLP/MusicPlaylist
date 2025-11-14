@@ -15,6 +15,6 @@ public class UserProfile : Profile
                 dest.Id = ObjectId.GenerateNewId().ToJson();
             });
         CreateMap<User, UserGetDto>()
-            .ForMember(d => d.Playlist, opt => opt.Ignore());
+            .ForMember(d => d.Playlists, opt => opt.Ignore());
     }
 }

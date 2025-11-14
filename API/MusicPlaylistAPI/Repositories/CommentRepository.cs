@@ -20,9 +20,14 @@ public class CommentRepository : ICommentRepository
     public async Task<Comment?> GetByIdAsync(string id) =>
         await (await _collection.FindAsync(c => c.Id == id)).FirstOrDefaultAsync();
 
+    public async Task<List<Comment>> GetByPlaylistIdAsync(string id) =>
+        await (await _collection.FindAsync(c => c.PlaylistId == id)).ToListAsync();
+
     public async Task UpdateAsync(string id, Comment comment) =>
         await _collection.ReplaceOneAsync(c => c.Id == id, comment);
 
     public async Task DeleteAsync(string id) =>
         await _collection.DeleteOneAsync(c => c.Id == id);
+
+   
 }

@@ -6,5 +6,5 @@ public class CommentGetDto
     public string Title { get; set; }
     public string Text { get; set; }
     public DateTime CreatedAt { get; set; }
-    public UserGetDto Author { get; set; }
+    public UserView Author { get; set; }
 }

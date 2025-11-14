@@ -23,9 +23,9 @@ public class UserService : IUserService
 
     public async Task<UserGetDto> CreateAsync(UserCreateDto user)
     {
-        User createUser = _mapper.Map<User>(user);
-        await _userRepo.CreateAsync(createUser);
-        return _mapper.Map<UserGetDto>(await _userRepo.GetByIdAsync(createUser.Id)0;
+        User userCreate = _mapper.Map<User>(user);
+        await _userRepo.CreateAsync(userCreate);
+        return _mapper.Map<UserGetDto>(await GetAsync(userCreate.Id));
     }
 
     public async Task<List<UserGetDto>> GetAsync()
@@ -44,9 +44,9 @@ public class UserService : IUserService
             throw new NullReferenceException($"User with id:{id} doesn't exist");
 
         Task<List<PlaylistGetDto>> playlists = _playlistService.GetByUserAsync(user.Id);
-        UserGetDto getUser = _mapper.Map<UserGetDto>(user);
-        getUser.Playlists = await playlists;
-        return getUser;
+        UserGetDto userGet = _mapper.Map<UserGetDto>(user);
+        userGet.Playlists = await playlists;
+        return userGet;
     }
 
     public async Task<UserGetDto> UpdateAsync(string id, UserCreateDto user)
