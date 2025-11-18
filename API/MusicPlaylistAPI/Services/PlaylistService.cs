@@ -41,7 +41,7 @@ public class PlaylistService : IPlaylistService
         for (int i = 0; i < playlists.Count; i++)
         {
             Task<List<MusicGetDto>> musics = _musicService.GetByPlaylistAsync(playlists[i].Id);
-            Task<List<CommentGetDto>> comments = _commentService.GetByPlaylistAsync(playlists[i].Id);
+            Task<List<FolllowGetDto>> comments = _commentService.GetByPlaylistAsync(playlists[i].Id);
             Task<List<FollowGetDto>> follows = _followService.GetByPlaylistAsync(playlists[i].Id);
 
             playlists[i].Musics = await musics;
@@ -61,7 +61,7 @@ public class PlaylistService : IPlaylistService
         PlaylistGetDto playlistGet = _mapper.Map<PlaylistGetDto>(playlist);
 
         Task<List<MusicGetDto>> musics = _musicService.GetByPlaylistAsync(playlistGet.Id);
-        Task<List<CommentGetDto>> comments = _commentService.GetByPlaylistAsync(playlistGet.Id);
+        Task<List<FolllowGetDto>> comments = _commentService.GetByPlaylistAsync(playlistGet.Id);
         Task<List<FollowGetDto>> follows = _followService.GetByPlaylistAsync(playlistGet.Id);
 
         playlistGet.Musics = await musics;
@@ -78,7 +78,7 @@ public class PlaylistService : IPlaylistService
         foreach (var playlist in playlists)
         {
             Task<List<MusicGetDto>> musics = _musicService.GetByPlaylistAsync(playlist.Id);
-            Task<List<CommentGetDto>> comments = _commentService.GetByPlaylistAsync(playlist.Id);
+            Task<List<FolllowGetDto>> comments = _commentService.GetByPlaylistAsync(playlist.Id);
             Task<List<FollowGetDto>> follows = _followService.GetByPlaylistAsync(playlist.Id);
 
             playlist.Musics = await musics;
@@ -108,7 +108,7 @@ public class PlaylistService : IPlaylistService
             throw new NullReferenceException($"Playlist with id:{id} doesn't exist");
 
         Task<List<MusicGetDto>> musics = _musicService.GetByPlaylistAsync(playlist.Id);
-        Task<List<CommentGetDto>> comments = _commentService.GetByPlaylistAsync(playlist.Id);
+        Task<List<FolllowGetDto>> comments = _commentService.GetByPlaylistAsync(playlist.Id);
         Task<List<FollowGetDto>> follows = _followService.GetByPlaylistAsync(playlist.Id);
 
         foreach (var music in await musics)

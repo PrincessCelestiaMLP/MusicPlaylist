@@ -9,6 +9,5 @@ public interface IFollowService
     Task<List<FollowGetDto>> GetAsync();
     Task<FollowGetDto> GetAsync(string id);
     Task<List<FollowGetDto>> GetByPlaylistAsync(string id);
-    Task<FollowGetDto> UpdateAsync(string id, FollowCreteDto follow);
     Task DeleteAsync(string id);
 }

@@ -17,8 +17,11 @@ public class FollowRepository : IFollowRepository
     public async Task<List<Follow>> GetAllAsync() =>
         await (await _collection.FindAsync(_ => true)).ToListAsync();
 
-    public async Task<Follow> GetByIdAsync(string id) =>
+    public async Task<Follow?> GetByIdAsync(string id) =>
         await (await _collection.FindAsync(f => f.Id == id)).FirstOrDefaultAsync();
+
+    public async Task<List<Follow>> GetByPlaylistIdAsync(string id) =>
+        await (await _collection.FindAsync(f => f.PlaylistId == id)).ToListAsync();
 
     public async Task DeleteAsync(string id) =>
         await _collection.DeleteOneAsync(f => f.Id == id);

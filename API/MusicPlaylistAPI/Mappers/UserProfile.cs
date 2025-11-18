@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MongoDB.Bson;
+using MusicPlaylistAPI.Models;
 using MusicPlaylistAPI.Models.Dto.Create;
 using MusicPlaylistAPI.Models.Dto.Get;
 using MusicPlaylistAPI.Models.Entity;
@@ -16,5 +17,6 @@ public class UserProfile : Profile
             });
         CreateMap<User, UserGetDto>()
             .ForMember(d => d.Playlists, opt => opt.Ignore());
+        CreateMap<User, UserView>();
     }
 }

@@ -1,38 +1,88 @@
-﻿using MusicPlaylistAPI.Models.Dto.Create;
+﻿using AutoMapper;
+using MusicPlaylistAPI.Models;
+using MusicPlaylistAPI.Models.Dto.Create;
 using MusicPlaylistAPI.Models.Dto.Get;
+using MusicPlaylistAPI.Models.Entity;
+using MusicPlaylistAPI.Repositories.Interface;
 using MusicPlaylistAPI.Services.Interface;
 
 namespace MusicPlaylistAPI.Services;
 
 public class FollowService : IFollowService
 {
-    public Task<FollowGetDto> CreateAsync(FollowCreteDto follow)
+    private readonly IFollowRepository _followRepo;
+    private readonly IUserRepository _userRepo;
+    private readonly IMapper _mapper;
+
+    public FollowService(IFollowRepository followRepo, IUserRepository userRepo, IMapper mapper)
     {
-        throw new NotImplementedException();
+        _followRepo = followRepo;
+        _userRepo = userRepo;
+        _mapper = mapper;
     }
 
-    public Task DeleteAsync(string id)
+    public async Task<FollowGetDto> CreateAsync(FollowCreteDto follow)
     {
-        throw new NotImplementedException();
+        Follow followCreate = _mapper.Map<Follow>(follow);
+        await _followRepo.CreateAsync(followCreate);
+        return _mapper.Map<FollowGetDto>(await GetAsync(followCreate.Id));
     }
 
-    public Task<List<FollowGetDto>> GetAsync()
+    public async Task<List<FollowGetDto>> GetAsync()
     {
-        throw new NotImplementedException();
+        List<Follow> follows = await _followRepo.GetAllAsync();
+        List<FollowGetDto> followsGet = _mapper.Map<List<FollowGetDto>>(follows);
+
+        for (int i = 0; i < follows.Count; i++)
+        {
+            User? user = await _userRepo.GetByIdAsync(follows[i].UserId);
+            if (user == null)
+                throw new ArgumentException($"User with id:{follows[i].UserId} doesn't exists");
+
+            followsGet[i].Follower = _mapper.Map<UserView>(user);
+        }
+
+        return followsGet;
     }
 
-    public Task<FollowGetDto> GetAsync(string id)
+    public async Task<FollowGetDto> GetAsync(string id)
     {
-        throw new NotImplementedException();
+        Follow? follow = await _followRepo.GetByIdAsync(id);
+        if (follow == null)
+            throw new NullReferenceException($"Follow with id:{id} doesn't exist");
+
+        FollowGetDto followGet = _mapper.Map<FollowGetDto>(follow);
+
+        User? user = await _userRepo.GetByIdAsync(follow.UserId);
+        if (user == null)
+            throw new ArgumentException($"User with id:{follow.UserId} doesn't exists");
+        followGet.Follower = _mapper.Map<UserView>(user);
+
+        return followGet;
     }
 
-    public Task<List<FollowGetDto>> GetByPlaylistAsync(string id)
+    public async Task<List<FollowGetDto>> GetByPlaylistAsync(string id)
     {
-        throw new NotImplementedException();
+        List<Follow> follows = await _followRepo.GetByPlaylistIdAsync(id);
+        List<FollowGetDto> followsGet = _mapper.Map<List<FollowGetDto>>(follows);
+
+        for (int i = 0; i < follows.Count; i++)
+        {
+            User? user = await _userRepo.GetByIdAsync(follows[i].UserId);
+            if (user == null)
+                throw new ArgumentException($"User with id:{follows[i].UserId} doesn't exists");
+
+            followsGet[i].Follower = _mapper.Map<UserView>(user);
+        }
+
+        return followsGet;
     }
 
-    public Task<FollowGetDto> UpdateAsync(string id, FollowCreteDto follow)
+    public async Task DeleteAsync(string id)
     {
-        throw new NotImplementedException();
+        if (await _followRepo.GetByIdAsync(id) == null)
+            throw new NullReferenceException($"Follow with id:{id} doesn't exist");
+
+        await _followRepo.DeleteAsync(id);
     }
 }

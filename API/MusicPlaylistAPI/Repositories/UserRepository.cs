@@ -7,6 +7,7 @@ namespace MusicPlaylistAPI.Repositories;
 public class UserRepository : IUserRepository
 {
     private readonly IMongoCollection<User> _collection;
+    private readonly IMongoCollection<Comment> _comments;
 
     public UserRepository() =>
         _collection = MongoDBClient.Instance.GetCollection<User>("Users");

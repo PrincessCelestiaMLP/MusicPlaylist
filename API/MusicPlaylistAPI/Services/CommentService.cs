@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MusicPlaylistAPI.Models;
 using MusicPlaylistAPI.Models.Dto.Create;
 using MusicPlaylistAPI.Models.Dto.Get;
 using MusicPlaylistAPI.Models.Entity;
@@ -20,43 +21,61 @@ public class CommentService : ICommentService
         _mapper = mapper;
     }
 
-    public async Task<CommentGetDto> CreateAsync(CommentCreateDto comment)
+    public async Task<FolllowGetDto> CreateAsync(CommentCreateDto comment)
     {
         Comment commentCreate = _mapper.Map<Comment>(comment);
         await _commentRepo.CreateAsync(commentCreate);
-        return _mapper.Map<CommentGetDto>(await GetAsync(commentCreate.Id));
+        return _mapper.Map<FolllowGetDto>(await GetAsync(commentCreate.Id));
     }
 
-    public async Task<List<CommentGetDto>> GetAsync()
+    public async Task<List<FolllowGetDto>> GetAsync()
     {
-        List<CommentGetDto> comments = _mapper.Map<List<CommentGetDto>>(await _commentRepo.GetAllAsync());
+        List<Comment> comments = await _commentRepo.GetAllAsync();
+        List<FolllowGetDto> commentsGet = _mapper.Map<List<FolllowGetDto>>(comments);
 
-        //foreach (var comment in comments)
-        //    comment.Author = 
+        for (int i = 0; i < comments.Count; i++)
+        {
+            User? user = await _userRepo.GetByIdAsync(comments[i].UserId);
+            if (user == null)
+                throw new ArgumentException($"User with id:{comments[i].UserId} doesn't exists");
 
-        return comments;
+            commentsGet[i].Author = _mapper.Map<UserView>(user);
+        }
+
+        return commentsGet;
     }
 
-    public async Task<CommentGetDto> GetAsync(string id)
+    public async Task<FolllowGetDto> GetAsync(string id)
     {
         Comment? comment = await _commentRepo.GetByIdAsync(id);
         if (comment == null)
             throw new NullReferenceException($"Comment with id:{id} doesn't exist");
 
-        CommentGetDto commentGet = _mapper.Map<CommentGetDto>(comment);
-        //commentGet.Author = 
+        FolllowGetDto commentGet = _mapper.Map<FolllowGetDto>(comment);
+
+        User? user = await _userRepo.GetByIdAsync(comment.UserId);
+        if (user == null)
+            throw new ArgumentException($"User with id:{comment.UserId} doesn't exists");
+        commentGet.Author = _mapper.Map<UserView>(user);
 
         return commentGet;
     }
 
-    public async Task<List<CommentGetDto>> GetByPlaylistAsync(string id)
+    public async Task<List<FolllowGetDto>> GetByPlaylistAsync(string id)
     {
-        List<CommentGetDto> comments = _mapper.Map<List<CommentGetDto>>(await _commentRepo.GetByPlaylistId(id));
+        List<Comment> comments = await _commentRepo.GetByPlaylistIdAsync(id);
+        List<FolllowGetDto> commentsGet = _mapper.Map<List<FolllowGetDto>>(comments);
 
-        //foreach (var comment in comments)
-        //    comment.Author = 
+        for (int i = 0; i < comments.Count; i++)
+        {
+            User? user = await _userRepo.GetByIdAsync(comments[i].UserId);
+            if (user == null)
+                throw new ArgumentException($"User with id:{comments[i].UserId} doesn't exists");
 
-        return comments;
+            commentsGet[i].Author = _mapper.Map<UserView>(user);
+        }
+
+        return commentsGet;
     }
 
     public async Task DeleteAsync(string id)

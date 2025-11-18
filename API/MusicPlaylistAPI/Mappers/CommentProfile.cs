@@ -15,7 +15,7 @@ public class CommentProfile : Profile
                 dest.Id = ObjectId.GenerateNewId().ToString();
                 dest.CreatedAt = DateTime.Now;
             });
-        CreateMap<Comment, CommentGetDto>()
+        CreateMap<Comment, FolllowGetDto>()
             .ForMember(d => d.Author, opt => opt.Ignore());
     }
 }

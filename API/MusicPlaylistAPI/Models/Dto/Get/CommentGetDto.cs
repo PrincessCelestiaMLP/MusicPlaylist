@@ -1,6 +1,6 @@
 ﻿namespace MusicPlaylistAPI.Models.Dto.Get;
 
-public class CommentGetDto
+public class FolllowGetDto
 {
     public string Id { get; set; }
     public string Title { get; set; }
