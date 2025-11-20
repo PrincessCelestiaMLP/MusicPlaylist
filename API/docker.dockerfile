@@ -4,11 +4,10 @@ WORKDIR /src
 
 # Копіюємо csproj окремо для кешування restore
 COPY ./MusicPlaylistAPI/MusicPlaylistAPI.csproj ./MusicPlaylistAPI/
+COPY ./MusicPlaylistAPI/ ./MusicPlaylistAPI/
 RUN dotnet restore MusicPlaylistAPI/MusicPlaylistAPI.csproj
 
 # Копіюємо весь код
-COPY MusicPlaylistAPI/* MusicPlaylistAPI/
-
 # Публікуємо
 RUN dotnet publish MusicPlaylistAPI/MusicPlaylistAPI.csproj -c Release -o /app/publish /p:UseAppHost=false
 
