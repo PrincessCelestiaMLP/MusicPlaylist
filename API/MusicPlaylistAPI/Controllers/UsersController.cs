@@ -34,7 +34,7 @@ namespace MusicPlaylistAPI.Controllers
         }
 
         [HttpGet("email")]
-        public async Task<IActionResult> GetByEmailAsync(string email)
+        public async Task<IActionResult> GetByEmailAsync([FromQuery] string email)
         {
             try
             {
