@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Копіюємо csproj окремо для кешування restore
-COPY MusicPlaylistAPI/MusicPlaylistAPI.csproj MusicPlaylistAPI/
+COPY ./MusicPlaylistAPI/MusicPlaylistAPI.csproj ./MusicPlaylistAPI/
 RUN dotnet restore MusicPlaylistAPI/MusicPlaylistAPI.csproj
 
 # Копіюємо весь код
