@@ -4,12 +4,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Music
 {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -81,7 +84,92 @@ namespace Music
         {
             lastPoint = new Point(e.X, e.Y);
         }
+        public async Task<string> RegisterAsync(string username, string email, string password)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://musicplaylist-a1qc.onrender.com");
 
+                var data = new
+                {
+                    username = username,
+                    email = email,
+                    password = password
+                };
+                string json = JsonConvert.SerializeObject(data);
+
+                HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync("/api/Users", content);
+                
+                return await response.Content.ReadAsStringAsync();
+            }
+        }
         
+        public async Task<bool> LoginAsync(string email, string password)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://musicplaylist-a1qc.onrender.com/");
+               
+                string url = $"api/Users/email?email={email}";
+
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show($"Помилка сервера: {response.StatusCode}");
+                    return false;
+                }
+
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+                
+                var user = JsonConvert.DeserializeObject<User>(jsonResponse);
+              
+                
+                if (user.Password == password)
+                {
+                    return true; 
+                }
+                else
+                {
+                    MessageBox.Show("Невірний пароль");
+                    return false;
+                }
+            }
+        }
+
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            string username, email, password;
+            if (button3.Text == "Login")
+            {
+                email = textBox1.Text;
+                password = textBox2.Text;
+
+                bool result = await LoginAsync(email, password);
+                if (result)
+                {
+                   Menu menu = new Menu();
+                    menu.Show();
+                    this.Hide();
+                }
+                textBox1.Text = "";
+                textBox2.Text = "";
+            }
+            else
+            {
+                username = textBox3.Text;
+                password = textBox2.Text;
+                email = textBox1.Text;
+               
+                await RegisterAsync(username, email, password);
+                
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+
+            }
+        }
     }
 }

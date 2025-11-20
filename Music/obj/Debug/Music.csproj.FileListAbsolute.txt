@@ -18,3 +18,7 @@ C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\
 C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.csproj.CoreCompileInputs.cache
 C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.exe
 C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.pdb
+C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.Menu.resources
+C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.csproj.Up2Date
