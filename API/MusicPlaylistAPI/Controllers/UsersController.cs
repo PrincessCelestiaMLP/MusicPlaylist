@@ -33,6 +33,19 @@ namespace MusicPlaylistAPI.Controllers
             }
         }
 
+        [HttpGet("email/{email:string}")]
+        public async Task<IActionResult> GetByEmailAsync(string email)
+        {
+            try
+            {
+                return Ok(await _userService.GetByEmailAsync(email));
+            }
+            catch (NullReferenceException)
+            {
+                return NotFound();
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> PostAsync(UserCreateDto user)
         {

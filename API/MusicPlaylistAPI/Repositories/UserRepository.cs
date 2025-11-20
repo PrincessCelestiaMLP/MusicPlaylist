@@ -21,6 +21,9 @@ public class UserRepository : IUserRepository
     public async Task<User?> GetByIdAsync(string id) =>
         await (await _collection.FindAsync(u => u.Id == id)).FirstOrDefaultAsync();
 
+    public async Task<User?> GetByEmailAsync(string email) =>
+        await (await _collection.FindAsync(u => u.Email == email)).FirstOrDefaultAsync();
+
     public async Task UpdateAsync(string id, User user) =>
         await _collection.ReplaceOneAsync(u => u.Id == id, user);
 

@@ -49,6 +49,18 @@ public class UserService : IUserService
         return userGet;
     }
 
+    public async Task<UserGetDto> GetByEmailAsync(string email)
+    {
+        User? user = await _userRepo.GetByEmailAsync(email);
+        if (user == null)
+            throw new NullReferenceException($"User with email:{email} doesn't exist");
+
+        Task<List<PlaylistGetDto>> playlists = _playlistService.GetByUserAsync(user.Id);
+        UserGetDto userGet = _mapper.Map<UserGetDto>(user);
+        userGet.Playlists = await playlists;
+        return userGet;
+    }
+
     public async Task<UserGetDto> UpdateAsync(string id, UserCreateDto user)
     {
         if (await _userRepo.GetByIdAsync(id) == null)
