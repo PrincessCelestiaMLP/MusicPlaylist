@@ -1,8 +1,10 @@
+using FluentValidation;
 using MusicPlaylistAPI.Mappers;
 using MusicPlaylistAPI.Repositories;
 using MusicPlaylistAPI.Repositories.Interface;
 using MusicPlaylistAPI.Services;
 using MusicPlaylistAPI.Services.Interface;
+using MusicPlaylistAPI.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +25,12 @@ builder.Services.AddScoped<IPlaylistService, PlaylistService>();
 builder.Services.AddScoped<IMusicService, MusicService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IFollowService, FollowService>();
+
+builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<PlaylistValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<MusicValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CommentValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<FollowValidator>();
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
