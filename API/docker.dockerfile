@@ -7,7 +7,7 @@ COPY MusicPlaylistAPI/MusicPlaylistAPI.csproj MusicPlaylistAPI/
 RUN dotnet restore MusicPlaylistAPI/MusicPlaylistAPI.csproj
 
 # Копіюємо весь код
-COPY MusicPlaylistAPI/ MusicPlaylistAPI/
+COPY MusicPlaylistAPI/* MusicPlaylistAPI/
 
 # Публікуємо
 RUN dotnet publish MusicPlaylistAPI/MusicPlaylistAPI.csproj -c Release -o /app/publish /p:UseAppHost=false
