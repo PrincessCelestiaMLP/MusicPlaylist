@@ -6,6 +6,7 @@ public class PlaylistGetDto
 {
     public string Id { get; set; }
     public string Title { get; set; }
+    public byte[] Cover { get; set; }
     public DateTime CreatedAt { get; set; }
     public List<MusicGetDto> Musics { get; set; }
     public List<CommentGetDto> Comments { get; set; }

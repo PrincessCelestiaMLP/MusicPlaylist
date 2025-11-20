@@ -15,10 +15,6 @@ public class Music
     [BsonElement("artist")]
     public string Artist { get; set; }
 
-    [BsonElement("image")]
-    [BsonRepresentation(BsonType.Array)]
-    public byte[] Covar { get; set; }
-
     [BsonElement("link")]
     public string Link { get; set; }
 

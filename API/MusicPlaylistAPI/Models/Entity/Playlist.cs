@@ -12,6 +12,10 @@ public class Playlist
     [BsonElement("title")]
     public string Title { get; set; }
 
+    [BsonElement("image")]
+    [BsonRepresentation(BsonType.Binary)]
+    public byte[] Cover { get; set; }
+
     [BsonElement("createdAt")]
     public DateTime CreatedAt { get; set; }
 
