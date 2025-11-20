@@ -29,7 +29,7 @@ namespace MusicPlaylistAPI.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetCommentById")]
         public async Task<IActionResult> GetByIdAsync(string id)
         {
             try
@@ -63,7 +63,7 @@ namespace MusicPlaylistAPI.Controllers
         public async Task<IActionResult> PostAsync(CommentCreateDto comment)
         {
             CommentGetDto commentGet = await _commentService.CreateAsync(comment);
-            return CreatedAtAction(nameof(GetByIdAsync), commentGet);
+            return CreatedAtRoute("GetCommentById", new { id = commentGet}, commentGet);
         }
 
         [HttpDelete("{id}")]

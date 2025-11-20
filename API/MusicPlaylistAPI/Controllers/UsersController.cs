@@ -20,7 +20,7 @@ namespace MusicPlaylistAPI.Controllers
         public async Task<IActionResult> GetAllAsync() =>
             Ok(await _userService.GetAsync());
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetUserById")]
         public async Task<IActionResult> GetByIdAsync(string id)
         {
             try
@@ -50,7 +50,7 @@ namespace MusicPlaylistAPI.Controllers
         public async Task<IActionResult> PostAsync(UserCreateDto user)
         {
             UserGetDto userGet = await _userService.CreateAsync(user);
-            return CreatedAtAction(nameof(GetByIdAsync), userGet);
+            return CreatedAtRoute("GetUserById", new { id = userGet.Id }, userGet);
         }
 
         [HttpPut("{id}")]

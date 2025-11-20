@@ -29,7 +29,7 @@ namespace MusicPlaylistAPI.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetFollowById")]
         public async Task<IActionResult> GetByIdAsync(string id)
         {
             try
@@ -63,7 +63,7 @@ namespace MusicPlaylistAPI.Controllers
         public async Task<IActionResult> PostAsync(FollowCreteDto follow)
         {
             FollowGetDto followGet = await _followService.CreateAsync(follow);
-            return CreatedAtAction(nameof(GetByIdAsync), followGet);
+            return CreatedAtRoute("GetFollowById", new { id = followGet.Id }, followGet);
         }
 
         [HttpDelete("{id}")]
