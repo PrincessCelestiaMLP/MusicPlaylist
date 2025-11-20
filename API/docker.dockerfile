@@ -1,5 +1,5 @@
 # 1. Build stage
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
 # Копіюємо csproj окремо для кешування restore
