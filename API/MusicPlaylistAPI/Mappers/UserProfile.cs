@@ -13,7 +13,7 @@ public class UserProfile : Profile
     {
         CreateMap<UserCreateDto, User>()
             .AfterMap((src, dest) => {
-                dest.Id = ObjectId.GenerateNewId().ToJson();
+                dest.Id = ObjectId.GenerateNewId().ToString();
             });
         CreateMap<User, UserGetDto>()
             .ForMember(d => d.Playlists, opt => opt.Ignore());
