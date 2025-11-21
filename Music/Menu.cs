@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Musi;
 
 namespace Music
 {
@@ -68,7 +69,7 @@ namespace Music
         {
             Application.Exit();
         }
-        private void HandleButtonClick(int playlistIndex)
+        private void HandleButtonClick(int playlistIndex, bool My)
         {
             Button btn = null;
 
@@ -93,30 +94,47 @@ namespace Music
                 && playlists.Count > playlistIndex)
             {
                 var selectedPlaylist = playlists[playlistIndex];
-                View form3 = new View(selectedPlaylist);
+                View form3 = new View(selectedPlaylist, My);
                 form3.Show();
                 this.Hide();
             }
             else
             {
-                DoList form4 = new DoList();
-                form4.Show();
-                this.Hide();
+                if (playlists == null || playlists.Count == 0)
+                {
+                    DoList form4 = new DoList("", new byte[0], "", new List<Follow>(), new List<Comment>());
+                    form4.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    var p = playlists[0];
+
+                    DoList form4 = new DoList(
+                        p.Id ?? "",
+                        p.Cover ?? new byte[0],
+                        p.Title ?? "",
+                        p.Follows ?? new List<Follow>(),
+                        p.Comments ?? new List<Comment>());
+
+                    form4.Show();
+                    this.Hide();
+                }
             }
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            HandleButtonClick(0);
+            HandleButtonClick(0, true);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            HandleButtonClick(1);
+            HandleButtonClick(1, true);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            HandleButtonClick(2);
+            HandleButtonClick(2, true);
         }
     }
 }

@@ -7,21 +7,96 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Musi;
 
 namespace Music
 {
     public partial class View : Form
     {
         private Playlist currentPlaylist;
-        public View(Playlist playlist)
+        public View(Playlist playlist,bool My)
         {
             InitializeComponent(); 
             currentPlaylist = playlist;
+            if (My)
+            {
+                button6.Text = "Do";
+            }
+            else
+            {
+                button6.Text = "Follow";
+            }
+            DisplayPlaylistInfo();
+            SetupButtonCover();
+            SetupDataGridView();
+        }
+        private void DisplayPlaylistInfo()
+        {
+            int followersCount = currentPlaylist.Follows?.Count ?? 0;
+            int commentsCount = currentPlaylist.Comments?.Count ?? 0;
+
+            label1.Text = $"{followersCount} ❤️";
+            label2.Text = $"{commentsCount} comments";
         }
 
+        private void SetupButtonCover()
+        {
+            if (currentPlaylist.Cover != null && currentPlaylist.Cover.Length > 0)
+            {
+                using (var ms = new System.IO.MemoryStream(currentPlaylist.Cover))
+                {
+                    var image = Image.FromStream(ms);
+                    button5.BackgroundImage = image;
+                    button5.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+            }
+            else
+            {
+                button5.BackgroundImage = null;
+            }
+        }
+
+        private void SetupDataGridView()
+        {
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
+            dataGridView1.Columns.Add("Title", "Назва");
+            dataGridView1.Columns.Add("Artist", "Виконавець");
+            dataGridView1.Columns.Add("Link", "Посилання");
+
+            if (currentPlaylist.Musics != null)
+            {
+                foreach (var music in currentPlaylist.Musics)
+                {
+                    dataGridView1.Rows.Add(music.Title, music.Artist, music.Link);
+                }
+            }
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
         private void View_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (button6.Text == "Do")
+            {
+                DoList form4 = new DoList(
+                    currentPlaylist.Id ?? "",
+                    currentPlaylist.Cover ?? new byte[0],
+                    currentPlaylist.Title ?? "",
+                    currentPlaylist.Follows ?? new List<Follow>(),
+                    currentPlaylist.Comments ?? new List<Comment>());
+
+                form4.Show();
+                this.Hide();
+            }
         }
     }
 }
