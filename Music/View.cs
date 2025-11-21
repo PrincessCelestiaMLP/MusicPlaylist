@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -83,7 +84,7 @@ namespace Music
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private async void button6_Click(object sender, EventArgs e)
         {
             if (button6.Text == "Do")
             {
@@ -96,6 +97,41 @@ namespace Music
 
                 form4.Show();
                 this.Hide();
+            }
+            else if (button6.Text == "Follow")
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://musicplaylist-a1qc.onrender.com/");
+
+                    if (currentPlaylist.Follows == null)
+                        currentPlaylist.Follows = new List<Follow>();
+
+                    var newFollower = new Follow
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                    };
+
+                    currentPlaylist.Follows.Add(newFollower);
+                    string updatedJson = Newtonsoft.Json.JsonConvert.SerializeObject(currentPlaylist);
+                    var content = new StringContent(updatedJson, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage putResponse = await client.PutAsync($"api/Playlists/{currentPlaylist.Id}", content);
+
+                    if (putResponse.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Ви підписалися на цей плейлист!");
+
+                        label1.Text = $"{currentPlaylist.Follows.Count} ❤️";
+
+                        button6.Enabled = false;
+                        button6.Text = "Following";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Помилка при підписці на плейлист.");
+                    }
+                }
             }
         }
     }

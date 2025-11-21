@@ -119,5 +119,11 @@ namespace Music
                 }
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ShowFolowers followersForm = new ShowFolowers(follows);
+            followersForm.Show();
+        }
     }
 }
