@@ -125,10 +125,12 @@ namespace Music
                 string jsonResponse = await response.Content.ReadAsStringAsync();
                 
                 var user = JsonConvert.DeserializeObject<User>(jsonResponse);
-              
-                
+
                 if (user.Password == password)
                 {
+                    UserView.Id = user.Id;
+                    UserView.Email = user.Email;
+                    UserView.Username = user.Username;
                     return true; 
                 }
                 else
@@ -138,7 +140,26 @@ namespace Music
                 }
             }
         }
+        public async Task<List<Playlist>> GetUserPlaylistsAsync(string userId)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://musicplaylist-a1qc.onrender.com/");
 
+                string url = $"api/Playlists/Users/{userId}";
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show($"Помилка сервера: {response.StatusCode}");
+                    return new List<Playlist>();
+                }
+
+                string json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<Playlist>>(json);
+            }
+        }
+        private List<Playlist> userPlaylists = new List<Playlist>();
         private async void button3_Click(object sender, EventArgs e)
         {
             string username, email, password;
@@ -148,9 +169,11 @@ namespace Music
                 password = textBox2.Text;
 
                 bool result = await LoginAsync(email, password);
+
                 if (result)
                 {
-                   Menu menu = new Menu();
+                    userPlaylists = await GetUserPlaylistsAsync(UserView.Id);
+                    Menu menu = new Menu(userPlaylists);
                     menu.Show();
                     this.Hide();
                 }
