@@ -50,9 +50,6 @@ namespace MusicPlaylistAPI.Controllers
         public async Task<IActionResult> PostAsync(UserCreateDto user)
         {
             UserGetDto userGet = await _userService.CreateAsync(user);
-<<<<<<< HEAD
-            return CreatedAtRoute("GetUserById", new { id = userGet.Id }, userGet);
-=======
 
             // Правильний виклик
             return CreatedAtAction(
@@ -60,7 +57,7 @@ namespace MusicPlaylistAPI.Controllers
                 new { id = userGet.Id },   // параметри маршруту
                 userGet                    // об’єкт для відповіді
             );
->>>>>>> caaeddf (Service Test)
+
         }
 
 

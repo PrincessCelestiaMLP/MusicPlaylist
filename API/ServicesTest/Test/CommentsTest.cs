@@ -41,7 +41,7 @@ namespace MusicPlaylistAPI.Tests.Services
                 Id = "generated-id",
                 Title = "Test",
                 Text = "Test",
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.Now,
                 Author = new UserView { Id = "u1", Username = "User1", Email = "user1@test.com" }
             };
 
@@ -54,7 +54,15 @@ namespace MusicPlaylistAPI.Tests.Services
             _mockCommentRepo.Setup(r => r.CreateAsync(commentEntity)).Returns(Task.CompletedTask);
             _mockCommentRepo.Setup(r => r.GetByIdAsync("generated-id")).ReturnsAsync(commentEntity);
             _mockUserRepo.Setup(r => r.GetByIdAsync("u1")).ReturnsAsync(user);
-            _mockMapper.Setup(m => m.Map<CommentGetDto>(commentEntity)).Returns(commentGet);
+            _mockMapper.Setup(m => m.Map<CommentGetDto>(commentEntity))
+    .Returns(new CommentGetDto
+    {
+        Id = "generated-id",
+        Title = "Test",
+        Text = "Test",
+        CreatedAt = commentEntity.CreatedAt
+    });
+
             _mockMapper.Setup(m => m.Map<UserView>(user)).Returns(commentGet.Author);
 
             // Act

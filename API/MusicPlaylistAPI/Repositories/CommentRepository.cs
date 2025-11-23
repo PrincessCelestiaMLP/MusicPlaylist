@@ -11,6 +11,12 @@ public class CommentRepository : ICommentRepository
     public CommentRepository() =>
         _collection = MongoDBClient.Instance.GetCollection<Comment>("Comments");
 
+    // Конструктор для тестів
+    public CommentRepository(IMongoCollection<Comment> collection)
+    {
+        _collection = collection;
+    }
+
     public async Task CreateAsync(Comment comment) =>
         await _collection.InsertOneAsync(comment);
 
