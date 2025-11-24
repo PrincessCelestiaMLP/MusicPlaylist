@@ -15,10 +15,14 @@ namespace Music
     public partial class View : Form
     {
         private Playlist currentPlaylist;
-        public View(Playlist playlist,bool My)
+        private string currentID;
+        private List<Playlist> userPlaylists;
+        public View(Playlist playlist,bool My, string currentID, List<Playlist> userPlaylist)
         {
             InitializeComponent(); 
+            this.currentID = currentID;
             currentPlaylist = playlist;
+            userPlaylists = userPlaylist;
             if (My)
             {
                 button6.Text = "Do";
@@ -87,13 +91,17 @@ namespace Music
         private async void button6_Click(object sender, EventArgs e)
         {
             if (button6.Text == "Do")
-            {
+            { 
                 DoList form4 = new DoList(
                     currentPlaylist.Id ?? "",
                     currentPlaylist.Cover ?? new byte[0],
                     currentPlaylist.Title ?? "",
                     currentPlaylist.Follows ?? new List<Follow>(),
-                    currentPlaylist.Comments ?? new List<Comment>());
+                    currentPlaylist.Comments ?? new List<Comment>(),
+                    true,
+                    currentID,
+                    userPlaylists
+                );
 
                 form4.Show();
                 this.Hide();
@@ -133,6 +141,13 @@ namespace Music
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu(userPlaylists, currentID);
+            menu.Show();
+            this.Hide();
         }
     }
 }

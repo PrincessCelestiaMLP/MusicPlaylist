@@ -24,5 +24,5 @@ C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\bin\Debug\
 C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.csproj.Up2Date
 C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.AddMusic.resources
 C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.DoList.resources
-C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.ShowComments.resources
 C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.View.resources
+C:\Users\zahar\Desktop\Флешка\ОКР\Laba_2\MusicPlaylist\Music\obj\Debug\Music.ShowFolowers.resources

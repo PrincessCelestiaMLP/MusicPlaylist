@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|c:\\users\\zahar\\desktop\\\u0444\u043B\u0435\u0448\u043A\u0430\\\u043E\u043A\u0440\\laba_2\\musicplaylist\\music\\showfolowers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\dolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\dolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|c:\\users\\zahar\\desktop\\\u0444\u043B\u0435\u0448\u043A\u0430\\\u043E\u043A\u0440\\laba_2\\musicplaylist\\music\\dolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\dolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\showfolowers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\showfolowers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,24 +27,16 @@
       "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\dolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\dolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\dolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\dolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|c:\\users\\zahar\\desktop\\\u0444\u043B\u0435\u0448\u043A\u0430\\\u043E\u043A\u0440\\laba_2\\musicplaylist\\music\\showfolowers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\showfolowers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\music\\showfolowers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D33846-21D9-4FF2-B3CD-FC1A17C88C7D}|Music\\Music.csproj|solutionrelative:music\\showfolowers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +46,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\Form1.cs",
+              "RelativeDocumentMoniker": "Music\\Form1.cs",
+              "ToolTip": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\Form1.cs",
+              "RelativeToolTip": "Music\\Form1.cs",
+              "ViewState": "AgIAAKQAAAAAAAAAAAA9wLMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T08:08:23.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Menu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\Menu.cs",
               "RelativeDocumentMoniker": "Music\\Menu.cs",
@@ -58,20 +74,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Menu.cs",
               "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\Menu.cs",
               "RelativeDocumentMoniker": "Music\\Menu.cs",
               "ToolTip": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\Menu.cs",
               "RelativeToolTip": "Music\\Menu.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAowHkAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAmwHsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-20T14:28:53.382Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "View.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\View.cs",
               "RelativeDocumentMoniker": "Music\\View.cs",
@@ -89,14 +105,14 @@
               "RelativeDocumentMoniker": "Music\\View.cs",
               "ToolTip": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\View.cs",
               "RelativeToolTip": "Music\\View.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAgwH0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAvwJMAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-21T02:41:36.329Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "DoList.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\DoList.cs",
               "RelativeDocumentMoniker": "Music\\DoList.cs",
@@ -108,20 +124,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "DoList.cs",
               "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\DoList.cs",
               "RelativeDocumentMoniker": "Music\\DoList.cs",
               "ToolTip": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\DoList.cs",
               "RelativeToolTip": "Music\\DoList.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAewBcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAApwHoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-21T03:10:32.419Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ShowFolowers.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\ShowFolowers.cs",
               "RelativeDocumentMoniker": "Music\\ShowFolowers.cs",
@@ -133,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ShowFolowers.cs",
               "DocumentMoniker": "C:\\Users\\zahar\\Desktop\\\u0424\u043B\u0435\u0448\u043A\u0430\\\u041E\u041A\u0420\\Laba_2\\MusicPlaylist\\Music\\ShowFolowers.cs",
               "RelativeDocumentMoniker": "Music\\ShowFolowers.cs",

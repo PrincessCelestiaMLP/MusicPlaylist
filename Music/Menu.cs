@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,12 @@ namespace Music
     public partial class Menu : Form
     {
         private List<Playlist> playlists;
-        public Menu(List<Playlist> playlists)
+        private string currentID;
+        public Menu(List<Playlist> playlists, string currentID)
         {
             InitializeComponent();
             this.playlists = playlists;
+            this.currentID = currentID;
             SetupButtonsBackground();
 
         }
@@ -28,7 +31,7 @@ namespace Music
 
             Image ByteArrayToImage(byte[] bytes)
             {
-                using (var ms = new System.IO.MemoryStream(bytes))
+                using (var ms = new MemoryStream(bytes))
                 {
                     return Image.FromStream(ms);
                 }
@@ -94,28 +97,31 @@ namespace Music
                 && playlists.Count > playlistIndex)
             {
                 var selectedPlaylist = playlists[playlistIndex];
-                View form3 = new View(selectedPlaylist, My);
+                View form3 = new View(selectedPlaylist, My, currentID, playlists);
                 form3.Show();
                 this.Hide();
             }
             else
             {
+                bool state;
                 if (playlists == null || playlists.Count == 0)
                 {
-                    DoList form4 = new DoList("", new byte[0], "", new List<Follow>(), new List<Comment>());
+                    state = false;
+                    DoList form4 = new DoList("", new byte[0], "", new List<Follow>(), new List<Comment>(), state, currentID, playlists);
                     form4.Show();
                     this.Hide();
                 }
                 else
                 {
                     var p = playlists[0];
-
+                    state = true;
                     DoList form4 = new DoList(
                         p.Id ?? "",
                         p.Cover ?? new byte[0],
                         p.Title ?? "",
                         p.Follows ?? new List<Follow>(),
-                        p.Comments ?? new List<Comment>());
+                        p.Comments ?? new List<Comment>(),
+                        state, currentID, playlists);
 
                     form4.Show();
                     this.Hide();

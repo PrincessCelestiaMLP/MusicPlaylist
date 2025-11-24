@@ -15,9 +15,11 @@ namespace Music
 
     public partial class Form1 : Form
     {
+        private UserView currentUser;
         public Form1()
         {
             InitializeComponent();
+            currentUser = new UserView();
             label2.Location = new Point(69, 256);
             textBox1.Location = new Point(74, 285);
             label3.Location = new Point(69, 335);
@@ -128,9 +130,9 @@ namespace Music
 
                 if (user.Password == password)
                 {
-                    UserView.Id = user.Id;
-                    UserView.Email = user.Email;
-                    UserView.Username = user.Username;
+                    currentUser.Id = user.Id;
+                    currentUser.Email = user.Email;
+                    currentUser.Username = user.Username;
                     return true; 
                 }
                 else
@@ -172,8 +174,8 @@ namespace Music
 
                 if (result)
                 {
-                    userPlaylists = await GetUserPlaylistsAsync(UserView.Id);
-                    Menu menu = new Menu(userPlaylists);
+                    userPlaylists = await GetUserPlaylistsAsync(currentUser.Id);
+                    Menu menu = new Menu(userPlaylists, currentUser.Id);
                     menu.Show();
                     this.Hide();
                 }
